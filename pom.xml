@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <name>Kaazing Corporation</name>
-    <url>https://github.com/kaazing/community.git</url>
+    <url>https://github.com/kaazing/community</url>
     <description>Top-level pom for all Kaazing Community maven projects</description>
 
     <licenses>
@@ -22,8 +22,8 @@
     <inceptionYear>2014</inceptionYear>
 
     <scm>
-        <connection>scm:git:http://svn.kaazing.wan/kaazing/trunk</connection>
-        <url>http://fisheye.kaazing.wan/browse/KaazingSVN/kaazing/trunk</url>
+        <url>https://github.com/kaazing/community.git</url>
+        <connection>scm:git:https://github.com/kaazing/community.git</connection>
     </scm>
 
     <distributionManagement>
@@ -36,32 +36,6 @@
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>internal</id>
-            <name>Archiva Managed Internal Repository</name>
-            <url>http://artifactory.kaazing.wan/artifactory/archiva-internal/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>snapshots</id>
-            <name>Archiva Managed Snapshot Repository</name>
-            <url>http://artifactory.kaazing.wan/artifactory/archiva-snapshots/</url>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
 
     <developers>
         <developer>
