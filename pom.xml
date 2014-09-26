@@ -47,7 +47,7 @@
 
     <profiles>
         <profile>
-            <id>release-profile</id>
+            <id>release</id>
             <build>
                 <plugins>
                     <plugin>
