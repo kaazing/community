@@ -25,7 +25,7 @@
     <scm>
         <connection>scm:git:${project.scm.url}</connection>
         <developerConnection>scm:git:${project.scm.url}</developerConnection>
-        <url>git@github.com:kaazing/common.git</url>
+        <url>git@github.com:kaazing/community.git</url>
     </scm>
 
     <distributionManagement>
