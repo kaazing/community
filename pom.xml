@@ -6,10 +6,11 @@
     <groupId>org.kaazing</groupId>
     <artifactId>community</artifactId>
     <packaging>pom</packaging>
-    <version>1.1-SNAPSHOT</version>
+    <version>1.2-SNAPSHOT</version>
 
     <name>Kaazing Corporation</name>
     <url>https://github.com/kaazing/community</url>
+
     <description>Top-level pom for all Kaazing Community maven projects</description>
 
     <licenses>
@@ -22,8 +23,9 @@
     <inceptionYear>2014</inceptionYear>
 
     <scm>
-        <url>https://github.com/kaazing/community.git</url>
-        <connection>scm:git:https://github.com/kaazing/community.git</connection>
+        <connection>scm:git:${project.scm.url}</connection>
+        <developerConnection>scm:git:${project.scm.url}</developerConnection>
+        <url>git@github.com:kaazing/common.git</url>
     </scm>
 
     <distributionManagement>
