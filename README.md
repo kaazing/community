@@ -19,7 +19,7 @@ where "myProject" is the name of the project to be released
 
 Once released, projects will be deployed in the following repo which is periodically synced with Maven Central
 
-```
+```xml
     <repository>
         <id>sonatype-nexus-snapshots</id>
         <name>Sonatype Nexus Snapshots</name>
