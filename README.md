@@ -17,7 +17,7 @@ Projects inheriting community as a parent should add the following in order to r
 ```
 where "myProject" is the name of the project to be released
 
-Once released, projects will be deployed in the following repo which is periodically synced with Maven Central
+Once released projects will be deployed in the following repo which is periodically synced with Maven Central
 
 ```xml
     <repository>
