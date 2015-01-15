@@ -1,5 +1,10 @@
 Community
 ==========
+[![Build Status][build-status-image]][build-status]
+
+[build-status-image]: https://travis-ci.org/kaazing/community.svg?branch=develop
+[build-status]: https://travis-ci.org/kaazing/community
+
 
 Community provides a top level parent pom for other [Kaazing](http://kaazing.org) projects.  This pom binds the minimal set of plugins and [metadata](http://central.sonatype.org/pages/requirements.html#sufficient-metadata) to the maven build process to fullfil the [Maven Central release requirements](http://central.sonatype.org/pages/apache-maven.html). Additionally, it provides the plugin configuration for [jgitflow-maven-plugin](https://bitbucket.org/atlassian/jgit-flow/wiki/Home), which allows automated builds to follow the [gitflow branching model](http://nvie.com/posts/a-successful-git-branching-model/).
 
