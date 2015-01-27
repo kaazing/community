@@ -32,6 +32,8 @@
 		<checkstyle.config.location>org/kaazing/code/quality/checkstyle.xml</checkstyle.config.location>
 		<checkstyle.plugin.version>2.12</checkstyle.plugin.version>
 		<code.quality.version>1.1</code.quality.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<distributionManagement>
