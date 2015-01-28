@@ -16,8 +16,8 @@ Once released, projects will be deployed in the following Sonatype repository, w
 
 ```xml
     <repository>
-        <id>sonatype-nexus-snapshots</id>
-        <name>Sonatype Nexus Snapshots</name>
+        <id>sonatype-nexus-releases</id>
+        <name>Sonatype Nexus Releases</name>
         <url>https://oss.sonatype.org/content/repositories/releases/</url>
     </repository>
 ```
