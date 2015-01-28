@@ -2,5 +2,5 @@ language: Java
 jdk:
   - oraclejdk7
   - openjdk7
-before_script: mvn dependency:go-offline
+install: mvn dependency:go-offline
 script: mvn verify -P-community.parent
