@@ -2,4 +2,4 @@ language: Java
 jdk:
   - oraclejdk7
   - openjdk7
-script: mvn verify -P-community.parent
+script: "mvn verify -P-community.parent"
