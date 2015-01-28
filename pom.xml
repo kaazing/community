@@ -59,7 +59,7 @@
     <scm>
         <url>https://github.com/kaazing/community</url>
         <connection>scm:git:https://github.com/kaazing/community</connection>
-        <developerConnection>scm:git:https://github.com/kaazing/community</developerConnection>
+        <developerConnection>${project.scm.connection}</developerConnection>
     </scm>
 
     <build>
@@ -200,7 +200,7 @@
                         <artifactId>maven-enforcer-plugin</artifactId>
                         <executions>
                             <execution>
-                                <id>enforce-scm</id>
+                                <id>enforce-override</id>
                                 <phase>validate</phase>
                                 <goals>
                                     <goal>enforce</goal>
@@ -208,16 +208,24 @@
                                 <configuration>
                                     <rules>
                                         <evaluateBeanshell>
+                                            <condition>!"Community".equals("${project.name}")</condition>
+                                            <message>POM missing name (project.name)</message>
+                                        </evaluateBeanshell>
+                                        <evaluateBeanshell>
+                                            <condition>!"Community POM for all Maven projects".equals("${project.description}")</condition>
+                                            <message>POM missing description (project.description)</message>
+                                        </evaluateBeanshell>
+                                        <evaluateBeanshell>
+                                            <condition>!"https://github.com/kaazing/community".equals("${project.url}")</condition>
+                                            <message>POM missing url (project.url)</message>
+                                        </evaluateBeanshell>
+                                        <evaluateBeanshell>
                                             <condition>!"https://github.com/kaazing/community".equals("${project.scm.url}")</condition>
-                                            <message>POM has incomplete SCM section (project.scm.url)</message>
+                                            <message>POM missing scm url (project.scm.url)</message>
                                         </evaluateBeanshell>
                                         <evaluateBeanshell>
                                             <condition>!"scm:git:https://github.com/kaazing/community".equals("${project.scm.connection}")</condition>
-                                            <message>POM has incomplete SCM section (project.scm.connection)</message>
-                                        </evaluateBeanshell>
-                                        <evaluateBeanshell>
-                                            <condition>!"scm:git:https://github.com/kaazing/community".equals("${project.scm.developerConnection}")</condition>
-                                            <message>POM has incomplete SCM section (project.scm.developerConnection)</message>
+                                            <message>POM missing scm connection (project.scm.connection)</message>
                                         </evaluateBeanshell>
                                     </rules>
                                 </configuration>
