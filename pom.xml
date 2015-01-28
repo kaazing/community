@@ -33,6 +33,7 @@
         <javadoc.plugin.version>2.10.1</javadoc.plugin.version>
         <gpg.plugin.version>1.5</gpg.plugin.version>
         <nexus.staging.plugin.version>1.6.2</nexus.staging.plugin.version>
+        <enforcer.plugin.version>1.3.1</enforcer.plugin.version>
     </properties>
 
     <distributionManagement>
@@ -55,11 +56,10 @@
         </developer>
     </developers>
 
-    <!-- child POMs should replace entire <scm> section with human readable values -->
     <scm>
-        <url>${do.not.override.property.scm.url}</url>
-        <connection>${do.not.override.property.scm.connection}</connection>
-        <developerConnection>${do.not.override.property.developerConnection}</developerConnection>
+        <url>https://github.com/kaazing/community</url>
+        <connection>scm:git:https://github.com/kaazing/community</connection>
+        <developerConnection>scm:git:https://github.com/kaazing/community</developerConnection>
     </scm>
 
     <build>
@@ -129,6 +129,11 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus.staging.plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${enforcer.plugin.version}</version>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -184,18 +189,43 @@
         </profile>
 
         <profile>
-            <id>community.scm</id>
-            <properties>
-                <do.not.override.property.scm.url>
-                    https://github.com/kaazing/community
-                </do.not.override.property.scm.url>
-                <do.not.override.property.scm.connection>
-                    scm:git:https://github.com/kaazing/community
-                </do.not.override.property.scm.connection>
-                <do.not.override.property.scm.developerConnection>
-                    scm:git:https://github.com/kaazing/community
-                </do.not.override.property.scm.developerConnection>
-            </properties>
+            <id>community.parent</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-enforcer-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>enforce-scm</id>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>enforce</goal>
+                                </goals>
+                                <configuration>
+                                    <rules>
+                                        <evaluateBeanshell>
+                                            <condition>!"https://github.com/kaazing/community".equals("${project.scm.url}")</condition>
+                                            <message>POM has incomplete SCM section (project.scm.url)</message>
+                                        </evaluateBeanshell>
+                                        <evaluateBeanshell>
+                                            <condition>!"scm:git:https://github.com/kaazing/community".equals("${project.scm.connection}")</condition>
+                                            <message>POM has incomplete SCM section (project.scm.connection)</message>
+                                        </evaluateBeanshell>
+                                        <evaluateBeanshell>
+                                            <condition>!"scm:git:https://github.com/kaazing/community".equals("${project.scm.developerConnection}")</condition>
+                                            <message>POM has incomplete SCM section (project.scm.developerConnection)</message>
+                                        </evaluateBeanshell>
+                                    </rules>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
         </profile>
     </profiles>
 </project>
