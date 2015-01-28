@@ -55,6 +55,13 @@
         </developer>
     </developers>
 
+    <!-- child POMs should replace entire <scm> section with human readable values -->
+    <scm>
+        <url>${do.not.override.property.scm.url}</url>
+        <connection>${do.not.override.property.scm.connection}</connection>
+        <developerConnection>${do.not.override.property.developerConnection}</developerConnection>
+    </scm>
+
     <build>
         <pluginManagement>
             <plugins>
@@ -174,6 +181,21 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+
+        <profile>
+            <id>community.scm</id>
+            <properties>
+                <do.not.override.property.scm.url>
+                    https://github.com/kaazing/community
+                </do.not.override.property.scm.url>
+                <do.not.override.property.scm.connection>
+                    scm:git:https://github.com/kaazing/community
+                </do.not.override.property.scm.connection>
+                <do.not.override.property.scm.developerConnection>
+                    scm:git:https://github.com/kaazing/community
+                </do.not.override.property.scm.developerConnection>
+            </properties>
         </profile>
     </profiles>
 </project>
