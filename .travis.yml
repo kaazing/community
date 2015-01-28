@@ -3,4 +3,4 @@ jdk:
   - oraclejdk7
   - openjdk7
 install: mvn dependency:go-offline
-script: mvn verify -P-community.parent
+script: mvn verify
