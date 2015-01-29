@@ -58,7 +58,7 @@
 
     <scm>
         <url>https://github.com/kaazing/community</url>
-        <connection>scm:git:https://github.com/kaazing/community</connection>
+        <connection>scm:git:https://github.com/kaazing/community.git</connection>
         <developerConnection>${project.scm.connection}</developerConnection>
     </scm>
 
