@@ -40,6 +40,7 @@
         <animal.sniffer.signature.groupId>org.codehaus.mojo.signature</animal.sniffer.signature.groupId>
         <animal.sniffer.signature.artifactId>java15</animal.sniffer.signature.artifactId>
         <animal.sniffer.signature.version>1.0</animal.sniffer.signature.version>
+        <lifecycle.mapping.plugin.version>1.0.0</lifecycle.mapping.plugin.version>
     </properties>
 
     <distributionManagement>
@@ -71,6 +72,30 @@
     <build>
         <pluginManagement>
             <plugins>
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>${lifecycle.mapping.plugin.version}</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+                                    <pluginExecutionFilter>
+                                        <groupId>org.apache.maven.plugins</groupId>
+                                        <artifactId>maven-enforcer-plugin</artifactId>
+                                        <versionRange>${enforcer.plugin.version}</versionRange>
+                                        <goals>
+                                            <goal>enforce</goal>
+                                        </goals>
+                                    </pluginExecutionFilter>
+                                    <action>
+                                        <ignore/>
+                                    </action>
+                                </pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-checkstyle-plugin</artifactId>
