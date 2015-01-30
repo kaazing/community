@@ -24,8 +24,9 @@
 
     <properties>
         <checkstyle.config.location>org/kaazing/code/quality/checkstyle.xml</checkstyle.config.location>
+        <checkstyle.suppressions.location>org/kaazing/code/quality/checkstyle-suppressions.xml</checkstyle.suppressions.location>
         <checkstyle.plugin.version>2.13</checkstyle.plugin.version>
-        <code.quality.version>1.1</code.quality.version>
+        <code.quality.version>1.2</code.quality.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <source.plugin.version>2.4</source.plugin.version>
@@ -76,6 +77,9 @@
                             </goals>
                             <phase>validate</phase>
                             <configuration>
+                                <suppressionsLocation>
+                                    ${checkstyle.suppressions.location}
+                                </suppressionsLocation>
                                 <includeTestSourceDirectory>true</includeTestSourceDirectory>
                                 <consoleOutput>true</consoleOutput>
                                 <logViolationsToConsole>true</logViolationsToConsole>
@@ -148,11 +152,14 @@
                                     </evaluateBeanshell>
                                     <evaluateBeanshell>
                                         <condition>!"${project.scm.url}".startsWith("${project.parent.scm.url}/")</condition>
-                                        <message>POM missing scm url (project.scm.url)</message>
+                                        <message>POM missing scm url
+                                            (project.scm.url)</message>
                                     </evaluateBeanshell>
                                     <evaluateBeanshell>
                                         <condition>!"${project.scm.connection}".startsWith("${project.parent.scm.connection}/")</condition>
-                                        <message>POM missing scm connection (project.scm.connection)</message>
+                                        <message>POM missing scm
+                                            connection
+                                            (project.scm.connection)</message>
                                     </evaluateBeanshell>
                                 </rules>
                             </configuration>
@@ -186,7 +193,9 @@
                                 <configuration>
                                     <rules>
                                         <requireReleaseDeps>
-                                          <message>Replace all SNAPSHOT dependencies with RELEASE versions</message>
+                                            <message>Replace all
+                                                SNAPSHOT dependencies
+                                                with RELEASE versions</message>
                                         </requireReleaseDeps>
                                     </rules>
                                 </configuration>
