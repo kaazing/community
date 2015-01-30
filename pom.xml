@@ -36,6 +36,10 @@
         <nexus.staging.plugin.version>1.6.2</nexus.staging.plugin.version>
         <enforcer.plugin.version>1.3.1</enforcer.plugin.version>
         <require.java.version>1.5.0+</require.java.version>
+        <animal.sniffer.enforcer.rule.version>1.13</animal.sniffer.enforcer.rule.version>
+        <animal.sniffer.signature.groupId>org.codehaus.mojo.signature</animal.sniffer.signature.groupId>
+        <animal.sniffer.signature.artifactId>java15</animal.sniffer.signature.artifactId>
+        <animal.sniffer.signature.version>1.0</animal.sniffer.signature.version>
     </properties>
 
     <distributionManagement>
@@ -138,6 +142,13 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-enforcer-plugin</artifactId>
                     <version>${enforcer.plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>animal-sniffer-enforcer-rule</artifactId>
+                            <version>${animal.sniffer.enforcer.rule.version}</version>
+                        </dependency>
+                    </dependencies>
                     <executions>
                         <execution>
                             <id>default-enforce</id>
@@ -165,6 +176,13 @@
                                     <requireJavaVersion>
                                         <version>${require.java.version}</version>
                                     </requireJavaVersion>
+                                    <checkSignatureRule implementation="org.codehaus.mojo.animal_sniffer.enforcer.CheckSignatureRule">
+                                        <signature>
+                                            <groupId>${animal.sniffer.signature.groupId}</groupId>
+                                            <artifactId>${animal.sniffer.signature.artifactId}</artifactId>
+                                            <version>${animal.sniffer.signature.version}</version>
+                                        </signature>
+                                    </checkSignatureRule>
                                 </rules>
                             </configuration>
                         </execution>
