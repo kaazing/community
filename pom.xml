@@ -336,7 +336,6 @@
         <profile>
             <id>bootstrap</id>
             <properties>
-                <enforcer.skip>true</enforcer.skip>
                 <animal.sniffer.skip>true</animal.sniffer.skip>
                 <checkstyle.skip>true</checkstyle.skip>
                 <skipTests>true</skipTests>
