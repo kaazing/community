@@ -10,7 +10,7 @@ Community provides a parent POM for other [Kaazing](http://kaazing.org) projects
 Projects inheriting community as a parent should add the following in order to release to maven central via automated builds
 
 1. POM [name, description, and url](https://maven.apache.org/pom.html#What_is_the_POM)
-2. POM [SCM information](http://central.sonatype.org/pages/requirements.html#scm-information)
+2. POM [SCM information](http://maven.apache.org/pom.html#SCM)
 
 Once released, projects will be deployed in the following Sonatype repository, which is periodically synced with Maven Central.
 
