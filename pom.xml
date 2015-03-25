@@ -189,18 +189,18 @@
                                 <rules>
                                     <evaluateBeanshell>
                                         <condition>!"${project.url}".startsWith("${project.parent.url}/")</condition>
-                                        <message>MUST override POM url</message>
+                                        <message>MUST override POM url, specifically project.url "${project.url}" does not start with "${project.parent.url}"</message>
                                     </evaluateBeanshell>
                                     <evaluateBeanshell>
                                         <condition>!"${project.scm.url}".startsWith("${project.parent.scm.url}/")</condition>
                                         <message>POM missing scm url
-                                            (project.scm.url)</message>
+                                            (project.scm.url), specifically it does not start with "${project.parent.scm.url}/"</message>
                                     </evaluateBeanshell>
                                     <evaluateBeanshell>
                                         <condition>!"${project.scm.connection}".startsWith("${project.parent.scm.connection}/")</condition>
                                         <message>POM missing scm
                                             connection
-                                            (project.scm.connection)</message>
+                                            (project.scm.connection), specifically it does not startWith "${project.parent.scm.connection}/"</message>
                                     </evaluateBeanshell>
                                     <requireJavaVersion>
                                         <version>${require.java.version}</version>
