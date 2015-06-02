@@ -38,7 +38,7 @@
         <require.java.version>1.5.0+</require.java.version>
         <animal.sniffer.version>1.14</animal.sniffer.version>
         <animal.sniffer.plugin.version>${animal.sniffer.version}</animal.sniffer.plugin.version>
-        <animal.sniffer.signature.groupId>org.codehaus.mojo.signature</animal.sniffer.signature.groupId>
+        <animal.sniffer.signature.groupId>org.kaazing.mojo.signature</animal.sniffer.signature.groupId>
         <animal.sniffer.signature.artifactId>java18</animal.sniffer.signature.artifactId>
         <animal.sniffer.signature.version>1.0</animal.sniffer.signature.version>
         <animal.sniffer.skip>false</animal.sniffer.skip>
