@@ -38,6 +38,7 @@
         <require.java.version>1.5.0+</require.java.version>
         <animal.sniffer.version>1.14</animal.sniffer.version>
         <animal.sniffer.plugin.version>${animal.sniffer.version}</animal.sniffer.plugin.version>
+        <versions.maven.plugin.version>2.1</versions.maven.plugin.version>
         <animal.sniffer.signature.groupId>org.kaazing.mojo.signature</animal.sniffer.signature.groupId>
         <animal.sniffer.signature.artifactId>java18</animal.sniffer.signature.artifactId>
         <animal.sniffer.signature.version>1.0</animal.sniffer.signature.version>
@@ -154,6 +155,11 @@
                     <groupId>org.sonatype.plugins</groupId>
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus.staging.plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>
+                    <version>${versions.maven.plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
