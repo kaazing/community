@@ -27,10 +27,13 @@
         <dependency>
             <groupId>org.kaazing</groupId>
             <artifactId>community.license</artifactId>
-            <type>jar</type>
-            <scope>provided</scope>
+            <!-- We really want -->
+            <!--     <version>{project.version}</version> -->
+            <!-- but due to inheritance rules, this won't work. -->
+            <version>RELEASE</version>
         </dependency>
     </dependencies>
+
 
     <build>
         <plugins>

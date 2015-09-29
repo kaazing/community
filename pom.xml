@@ -78,11 +78,6 @@
                 <version>${animal.sniffer.version}</version>
                 <scope>provided</scope>
             </dependency>
-            <dependency>
-                <groupId>org.kaazing</groupId>
-                <artifactId>community.license</artifactId>
-                <version>${project.version}</version>
-            </dependency>
         </dependencies>
     </dependencyManagement>
 
