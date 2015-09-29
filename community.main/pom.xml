@@ -30,7 +30,7 @@
             <!-- We really want -->
             <!--     <version>{project.version}</version> -->
             <!-- but due to inheritance rules, this won't work. -->
-            <version>RELEASE</version>
+            <version>develop-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
