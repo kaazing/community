@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.15...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.16...HEAD)
+
+**Merged pull requests:**
+
+- Update configuration of license-maven-plugin [\#31](https://github.com/kaazing/community/pull/31) ([ahousing](https://github.com/ahousing))
+
+## [2.16](https://github.com/kaazing/community/tree/2.16) (2015-09-30)
+[Full Changelog](https://github.com/kaazing/community/compare/2.15...2.16)
 
 **Merged pull requests:**
 
