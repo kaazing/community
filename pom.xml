@@ -24,7 +24,7 @@
         <checkstyle.config.location>org/kaazing/code/quality/checkstyle.xml</checkstyle.config.location>
         <checkstyle.suppressions.location>org/kaazing/code/quality/checkstyle-suppressions.xml</checkstyle.suppressions.location>
         <checkstyle.plugin.version>2.13</checkstyle.plugin.version>
-        <code.quality.version>1.2</code.quality.version>
+        <code.quality.version>1.4</code.quality.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <source.plugin.version>2.4</source.plugin.version>
