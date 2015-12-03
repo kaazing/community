@@ -2,7 +2,16 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.16...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.17...HEAD)
+
+**Merged pull requests:**
+
+- Update pom.xml [\#35](https://github.com/kaazing/community/pull/35) ([dpwspoon](https://github.com/dpwspoon))
+- Revert "Update pom.xml" [\#33](https://github.com/kaazing/community/pull/33) ([dpwspoon](https://github.com/dpwspoon))
+- Update pom.xml [\#32](https://github.com/kaazing/community/pull/32) ([dpwspoon](https://github.com/dpwspoon))
+
+## [2.17](https://github.com/kaazing/community/tree/2.17) (2015-10-08)
+[Full Changelog](https://github.com/kaazing/community/compare/2.16...2.17)
 
 **Merged pull requests:**
 
