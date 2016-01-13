@@ -1,6 +1,5 @@
 language: Java
 jdk:
-  - oraclejdk7
-  - openjdk7
+  - oraclejdk8
 install: mvn -Pbootstrap verify
 script: mvn verify
