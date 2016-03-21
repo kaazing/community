@@ -2,7 +2,15 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.17...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.18...HEAD)
+
+**Merged pull requests:**
+
+- Update code qualitiy version in pom.xml [\#37](https://github.com/kaazing/community/pull/37) ([dpwspoon](https://github.com/dpwspoon))
+- Update .travis.yml [\#36](https://github.com/kaazing/community/pull/36) ([mihneac](https://github.com/mihneac))
+
+## [2.18](https://github.com/kaazing/community/tree/2.18) (2015-12-03)
+[Full Changelog](https://github.com/kaazing/community/compare/2.17...2.18)
 
 **Merged pull requests:**
 
