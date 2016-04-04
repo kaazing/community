@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.18...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.19...HEAD)
+
+**Merged pull requests:**
+
+- Update copyright to 2016 [\#38](https://github.com/kaazing/community/pull/38) ([ahousing](https://github.com/ahousing))
+
+## [2.19](https://github.com/kaazing/community/tree/2.19) (2016-03-21)
+[Full Changelog](https://github.com/kaazing/community/compare/2.18...2.19)
 
 **Merged pull requests:**
 
