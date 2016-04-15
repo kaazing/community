@@ -218,7 +218,7 @@
                     <version>2.10</version>
                     <executions>
                         <execution>
-                            <id>unpack</id>
+                            <id>unpack-license</id>
                             <phase>generate-sources</phase>
                             <goals>
                                 <goal>unpack</goal>
