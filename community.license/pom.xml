@@ -11,7 +11,7 @@
     <groupId>org.kaazing</groupId>
     <artifactId>community.license</artifactId>
 
-    <name>Kaazing Corporation License</name>
+    <name>Community License</name>
     <url>https://github.com/kaazing/community</url>
 
     <scm>
