@@ -215,7 +215,7 @@
                 </plugin>
                 <plugin>
                     <!-- To update the license, do: -->
-                    <!--     mvn license:format -->
+                    <!--     mvn com.mycila:license-maven-plugin:format -->
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
                     <version>2.11</version>
