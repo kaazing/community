@@ -257,7 +257,11 @@
                             <groupId>org.kaazing</groupId>
                             <artifactId>community.license</artifactId>
                             <type>jar</type>
-                            <version>${project.version}</version>
+                            <!-- Note: the following approach
+                                     <version>{project.version}</version>
+                                 remains dynamic even after release, so resolves *incorrectly*
+                                 to the version of the project where the plugin is being used -->
+                             <version>develop-SNAPSHOT</version>
                         </dependency>
                     </dependencies>
                     <executions>
