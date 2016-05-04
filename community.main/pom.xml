@@ -23,23 +23,8 @@
         <developerConnection>${project.scm.connection}</developerConnection>
     </scm>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.kaazing</groupId>
-            <artifactId>community.license</artifactId>
-            <!-- We really want -->
-            <!--     <version>{project.version}</version> -->
-            <!-- but due to inheritance rules, this won't work. -->
-            <version>develop-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
-
-
     <build>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-            </plugin>
             <plugin>
                 <groupId>com.mycila</groupId>
                 <artifactId>license-maven-plugin</artifactId>
