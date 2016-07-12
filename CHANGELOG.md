@@ -2,7 +2,16 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.19...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.20...HEAD)
+
+**Merged pull requests:**
+
+- Updated version to 2.19.1 for maven-failsafe-plugin [\#41](https://github.com/kaazing/community/pull/41) ([justinma246](https://github.com/justinma246))
+- Enable mvn license:format to update license headers… [\#40](https://github.com/kaazing/community/pull/40) ([jfallows](https://github.com/jfallows))
+- Change id in pom from unpack to unpack-license [\#39](https://github.com/kaazing/community/pull/39) ([ahousing](https://github.com/ahousing))
+
+## [2.20](https://github.com/kaazing/community/tree/2.20) (2016-04-04)
+[Full Changelog](https://github.com/kaazing/community/compare/2.19...2.20)
 
 **Merged pull requests:**
 

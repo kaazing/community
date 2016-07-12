@@ -5,7 +5,7 @@
     <groupId>org.kaazing</groupId>
     <artifactId>community.parent</artifactId>
     <packaging>pom</packaging>
-    <version>2.20</version>
+    <version>2.21</version>
 
     <name>Community Parent</name>
     <url>https://github.com/kaazing/community</url>
@@ -28,7 +28,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <source.plugin.version>2.4</source.plugin.version>
-        <failsafe.plugin.version>2.18.1</failsafe.plugin.version>
+        <failsafe.plugin.version>2.19.1</failsafe.plugin.version>
         <javadoc.plugin.version>2.10.1</javadoc.plugin.version>
         <gpg.plugin.version>1.6</gpg.plugin.version>
         <nexus.staging.plugin.version>1.6.2</nexus.staging.plugin.version>
@@ -214,39 +214,13 @@
                     </executions>
                 </plugin>
                 <plugin>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>2.10</version>
-                    <executions>
-                        <execution>
-                            <id>unpack</id>
-                            <phase>generate-sources</phase>
-                            <goals>
-                                <goal>unpack</goal>
-                            </goals>
-                            <configuration>
-                                <artifactItems>
-                                    <artifactItem>
-                                        <!-- includes common copyright headers for sources -->
-                                        <groupId>org.kaazing</groupId>
-                                        <artifactId>community.license</artifactId>
-                                        <type>jar</type>
-                                    </artifactItem>
-                                </artifactItems>
-                                <overWriteReleases>true</overWriteReleases>
-                                <overWriteSnapshots>true</overWriteSnapshots>
-                                <failOnMissingClassifierArtifact>true</failOnMissingClassifierArtifact>
-                            </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
                     <!-- To update the license, do: -->
-                    <!--     mvn com.mycila:license-maven-plugin:RELEASE:format -DskipITs -DskipTests -->
+                    <!--     mvn com.mycila:license-maven-plugin:format -->
                     <groupId>com.mycila</groupId>
                     <artifactId>license-maven-plugin</artifactId>
-                    <version>2.3</version>
+                    <version>2.11</version>
                     <configuration>
-                        <header>${project.build.directory}/dependency/COPYRIGHT-community</header>
+                        <header>org/kaazing/community/license/COPYRIGHT</header>
                         <failIfMissing>true</failIfMissing>
                         <useDefaultExcludes>true</useDefaultExcludes>
                         <includes>
@@ -277,6 +251,19 @@
                             <rpt>SCRIPT_STYLE</rpt>
                         </mapping>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <!-- includes common copyright headers for sources -->
+                            <groupId>org.kaazing</groupId>
+                            <artifactId>community.license</artifactId>
+                            <type>jar</type>
+                            <!-- Note: the following approach
+                                     <version>{project.version}</version>
+                                 remains dynamic even after release, so resolves *incorrectly*
+                                 to the version of the project where the plugin is being used -->
+                             <version>2.21</version>
+                        </dependency>
+                    </dependencies>
                     <executions>
                         <execution>
                             <phase>process-sources</phase>
