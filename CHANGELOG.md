@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.21...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.22...HEAD)
+
+**Merged pull requests:**
+
+- Allow for an over-write of snapshotRepository, part 2 [\#43](https://github.com/kaazing/community/pull/43) ([ahousing](https://github.com/ahousing))
+
+## [2.22](https://github.com/kaazing/community/tree/2.22) (2016-09-23)
+[Full Changelog](https://github.com/kaazing/community/compare/2.21...2.22)
 
 **Merged pull requests:**
 
