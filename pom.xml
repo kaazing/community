@@ -42,13 +42,14 @@
         <animal.sniffer.signature.version>1.0</animal.sniffer.signature.version>
         <animal.sniffer.skip>false</animal.sniffer.skip>
         <lifecycle.mapping.plugin.version>1.0.0</lifecycle.mapping.plugin.version>
-        <snapshotRepository>https://oss.sonatype.org/content/repositories/snapshots</snapshotRepository>
+        <snapshotRepositoryId>ossrh</snapshotRepositoryId>
+        <snapshotRepositoryUrl>https://oss.sonatype.org/content/repositories/snapshots</snapshotRepositoryUrl>
     </properties>
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
-            <url>${snapshotRepository}</url>
+            <id>${snapshotRepositoryId}</id>
+            <url>${snapshotRepositoryUrl}</url>
         </snapshotRepository>
         <repository>
             <id>ossrh</id>
