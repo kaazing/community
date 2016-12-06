@@ -417,6 +417,7 @@
 
     <modules>
         <module>community.license</module>
+        <module>community.notice</module>
         <module>community.main</module>
     </modules>
 </project>
