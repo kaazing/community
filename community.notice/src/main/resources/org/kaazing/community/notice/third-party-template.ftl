@@ -34,16 +34,22 @@
     <#assign header = "This product depends on " + p.name + " " + p.version + "\n\n"/>
     <#assign mvnLicense = "\tLicense:\t"/>
     <#if !p.getLicenses()?has_content>
-        <#assign mvnLicense = mvnLicense + "null (null)\n"/>
+        <#-- Retrieve license from licenseMap -->
+        <#list licenseMap as projList>
+            <#list projList.getValue() as proj>
+                <#if proj == p>
+                    <#assign mvnLicense = mvnLicense + projList.getKey() + "\n"/>
+                </#if>
+            </#list>
+        </#list>
     <#else>
         <#list p.getLicenses() as license>
             <#assign mvnLicense = mvnLicense + (license.url!"null") + " (" + license.name + ")\n"/>
         </#list>
     </#if>
-    <#assign homepage = "\tHomepage:\t" + (p.url!"null") + "\n"/>
+    <#assign homepage = "\tHomepage:\t" + (p.url!"Home page is not included in maven artifact, and thus couldn't be referenced here") + "\n"/>
     <#return header + mvnLicense + homepage>
 </#function>
-
 <#list dependencyMap as e>
     <#assign project = e.getKey()/>
     <#assign licenses = e.getValue()/>
