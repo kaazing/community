@@ -47,7 +47,12 @@
             <#assign mvnLicense = mvnLicense + (license.url!"null") + " (" + license.name + ")\n"/>
         </#list>
     </#if>
-    <#assign homepage = "\tHomepage:\t" + (p.url!"Home page is not included in maven artifact, and thus couldn't be referenced here") + "\n"/>
+    <#assign homepage = ""/>
+    <#if p.url?has_content>
+        <#assign homepage = homepage + "\tHomepage:\t" + p.url + "\n"/>
+    <#else>
+        <#assign homepage = homepage + "\tThe project URL is not included in this dependency's pom, and thus could not be referenced here." + "\n"/>
+    </#if>
     <#return header + mvnLicense + homepage>
 </#function>
 <#list dependencyMap as e>
