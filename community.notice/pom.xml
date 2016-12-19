@@ -8,7 +8,6 @@
         <version>develop-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.kaazing</groupId>
     <artifactId>community.notice</artifactId>
 
     <name>Community Notice</name>
