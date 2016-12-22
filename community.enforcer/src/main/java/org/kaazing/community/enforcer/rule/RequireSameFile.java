@@ -24,8 +24,14 @@ public class RequireSameFile implements EnforcerRule {
         MavenProject project;
         try {
             project = (MavenProject) helper.evaluate("${project}");
-            File originalFile = new File(project.getBasedir() + "\\" + originalFilePath);
-            File revisedFile = new File(project.getBasedir() + "\\" + revisedFilePath);
+            File originalFile = new File(originalFilePath);
+            if (!originalFile.exists()) {
+                originalFile = new File(project.getBasedir() + "\\" + originalFilePath);
+            }
+            File revisedFile = new File(revisedFilePath);
+            if (!revisedFile.exists()) {
+                revisedFile = new File(project.getBasedir() + "\\" + revisedFilePath);
+            }
             if (!FileUtils.contentEquals(originalFile, revisedFile)) {
                 throw new EnforcerRuleException(errorMessage != null ? errorMessage : "The two compared files are not the same.");
             }
