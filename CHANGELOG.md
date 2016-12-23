@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.22...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.23...HEAD)
+
+**Merged pull requests:**
+
+- Added new maven module for the Notice.txt template file to be used in gateway [\#44](https://github.com/kaazing/community/pull/44) ([mgherghe](https://github.com/mgherghe))
+
+## [2.23](https://github.com/kaazing/community/tree/2.23) (2016-09-29)
+[Full Changelog](https://github.com/kaazing/community/compare/2.22...2.23)
 
 **Merged pull requests:**
 
