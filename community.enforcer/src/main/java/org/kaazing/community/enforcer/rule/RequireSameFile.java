@@ -15,6 +15,7 @@ import org.codehaus.plexus.component.configurator.expression.ExpressionEvaluatio
  */
 public class RequireSameFile implements EnforcerRule {
 
+    private static final String FILE_SEPARATOR = System.getProperty("file.separator");
     private String originalFilePath;
     private String revisedFilePath;
     private String errorMessage;
@@ -24,8 +25,20 @@ public class RequireSameFile implements EnforcerRule {
         MavenProject project;
         try {
             project = (MavenProject) helper.evaluate("${project}");
-            File originalFile = new File(project.getBasedir() + "\\" + originalFilePath);
-            File revisedFile = new File(project.getBasedir() + "\\" + revisedFilePath);
+            File originalFile = new File(project.getBasedir() + FILE_SEPARATOR + originalFilePath);
+            if (!originalFile.exists()) {
+                originalFile = new File(originalFilePath);
+                if (!originalFile.exists()) {
+                    throw new EnforcerRuleException("File from " + originalFile.getAbsolutePath() + " does not exist");
+                }
+            }
+            File revisedFile = new File(project.getBasedir() + FILE_SEPARATOR + revisedFilePath);
+            if (!revisedFile.exists()) {
+                revisedFile = new File(revisedFilePath);
+                if (!revisedFile.exists()) {
+                    throw new EnforcerRuleException("File from " + revisedFile.getAbsolutePath() + " does not exist");
+                }
+            }
             if (!FileUtils.contentEquals(originalFile, revisedFile)) {
                 throw new EnforcerRuleException(errorMessage != null ? errorMessage : "The two compared files are not the same.");
             }
