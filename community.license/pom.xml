@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.kaazing</groupId>
         <artifactId>community.parent</artifactId>
-        <version>develop-SNAPSHOT</version>
+        <version>2.25</version>
     </parent>
 
     <groupId>org.kaazing</groupId>
