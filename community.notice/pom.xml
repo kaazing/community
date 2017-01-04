@@ -8,10 +8,9 @@
         <version>2.25</version>
     </parent>
 
-    <groupId>org.kaazing</groupId>
-    <artifactId>community.license</artifactId>
+    <artifactId>community.notice</artifactId>
 
-    <name>Community License</name>
+    <name>Community Notice</name>
     <url>https://github.com/kaazing/community</url>
 
     <scm>

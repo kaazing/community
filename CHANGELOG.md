@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.23...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.24...HEAD)
+
+**Merged pull requests:**
+
+- Implemented change for specifying absolute path for the compared files in the enforcer rule [\#45](https://github.com/kaazing/community/pull/45) ([mgherghe](https://github.com/mgherghe))
+
+## [2.24](https://github.com/kaazing/community/tree/2.24) (2016-12-23)
+[Full Changelog](https://github.com/kaazing/community/compare/2.23...2.24)
 
 **Merged pull requests:**
 
