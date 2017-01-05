@@ -31,32 +31,36 @@
    values are all dependencies using this license
 -->
 <#function artifactFormat p>
-    <#assign header = "This product depends on " + p.name + " " + p.version + "\n\n"/>
-    <#assign mvnLicense = "\tLicense:\t"/>
-    <#if !p.getLicenses()?has_content>
-        <#-- Retrieve license from licenseMap -->
-        <#list licenseMap as projList>
-            <#list projList.getValue() as proj>
-                <#if proj == p>
-                    <#assign mvnLicense = mvnLicense + projList.getKey() + "\n"/>
-                </#if>
+    <#if !p.groupId?contains("kaazing")>
+        <#assign header = "This product depends on " + p.name + " " + p.version + "\n\n"/>
+        <#assign mvnLicense = "\tLicense:\t"/>
+        <#if !p.getLicenses()?has_content>
+            <#-- Retrieve license from licenseMap -->
+            <#list licenseMap as projList>
+                <#list projList.getValue() as proj>
+                    <#if proj == p>
+                        <#assign mvnLicense = mvnLicense + projList.getKey() + "\n"/>
+                    </#if>
+                </#list>
             </#list>
-        </#list>
-    <#else>
-        <#list p.getLicenses() as license>
-            <#assign mvnLicense = mvnLicense + (license.url!"null") + " (" + license.name + ")\n"/>
-        </#list>
+        <#else>
+            <#list p.getLicenses() as license>
+                <#assign mvnLicense = mvnLicense + (license.url!"null") + " (" + (license.name!"null") + ")\n"/>
+            </#list>
+        </#if>
+        <#assign homepage = ""/>
+        <#if p.url?has_content>
+            <#assign homepage = homepage + "\tHomepage:\t" + p.url + "\n"/>
+        <#else>
+            <#assign homepage = homepage + "\tThe project URL is not included in this dependency's pom, and thus could not be referenced here." + "\n"/>
+        </#if>
+        <#return header + mvnLicense + homepage>
     </#if>
-    <#assign homepage = ""/>
-    <#if p.url?has_content>
-        <#assign homepage = homepage + "\tHomepage:\t" + p.url + "\n"/>
-    <#else>
-        <#assign homepage = homepage + "\tThe project URL is not included in this dependency's pom, and thus could not be referenced here." + "\n"/>
-    </#if>
-    <#return header + mvnLicense + homepage>
 </#function>
 <#list dependencyMap as e>
     <#assign project = e.getKey()/>
     <#assign licenses = e.getValue()/>
+    <#if artifactFormat(project)?has_content>
 ${artifactFormat(project)}
+    </#if>
 </#list>
