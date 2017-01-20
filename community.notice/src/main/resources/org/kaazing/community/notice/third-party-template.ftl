@@ -32,19 +32,19 @@
 -->
 <#function artifactFormat p>
     <#assign header = "This product depends on " + p.name + " " + p.version + "\n\n"/>
-    <#assign mvnLicense = "\tLicense:\t"/>
+    <#assign mvnLicense = ""/>
     <#if !p.getLicenses()?has_content>
         <#-- Retrieve license from licenseMap -->
         <#list licenseMap as projList>
             <#list projList.getValue() as proj>
                 <#if proj == p>
-                    <#assign mvnLicense = mvnLicense + projList.getKey() + "\n"/>
+                    <#assign mvnLicense = mvnLicense + "\tLicense:\t" + projList.getKey() + "\n"/>
                 </#if>
             </#list>
         </#list>
     <#else>
         <#list p.getLicenses() as license>
-            <#assign mvnLicense = mvnLicense + (license.url!"null") + " (" + license.name + ")\n"/>
+            <#assign mvnLicense = mvnLicense + "\tLicense:\t" + (license.url!"null") + " (" + (license.name!"null") + ")\n"/>
         </#list>
     </#if>
     <#assign homepage = ""/>
