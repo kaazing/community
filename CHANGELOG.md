@@ -2,7 +2,14 @@
 
 ## [Unreleased](https://github.com/kaazing/community/tree/HEAD)
 
-[Full Changelog](https://github.com/kaazing/community/compare/2.24...HEAD)
+[Full Changelog](https://github.com/kaazing/community/compare/2.25...HEAD)
+
+**Merged pull requests:**
+
+- Added null check for license name in Notice template [\#47](https://github.com/kaazing/community/pull/47) ([mgherghe](https://github.com/mgherghe))
+
+## [2.25](https://github.com/kaazing/community/tree/2.25) (2017-01-04)
+[Full Changelog](https://github.com/kaazing/community/compare/2.24...2.25)
 
 **Merged pull requests:**
 
